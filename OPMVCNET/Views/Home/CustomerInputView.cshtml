@@ -1,0 +1,22 @@
+﻿@model OPMVCNET.Models.Customer
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HelloForm</title>
+</head>
+<body>
+    @using (Html.BeginForm("GetCustomerData", "Home"))
+    {
+    <p>
+        @Html.LabelFor(m => m.Id)
+        @Html.TextBoxFor(m => m.Id)
+    </p>
+
+    <button type="submit"> Get Customer </button>
+    }
+</body>
+</html>

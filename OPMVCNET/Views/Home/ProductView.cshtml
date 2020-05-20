@@ -1,0 +1,30 @@
+﻿@model OPMVCNET.Models.Products
+@{
+    Layout = null;
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HelloForm</title>
+</head>
+<body>
+    @using (Html.BeginForm("Purchase", "Home"))
+    {
+        <p>
+            @Html.LabelFor(m => m.Cid)
+            @Html.TextBoxFor(m => m.Cid)
+        </p>
+
+               
+        @Html.ListBoxFor(x => x.products, Model.productlist)
+
+
+        <p>
+            <button type="submit"> Purchase </button>
+        </p>
+    }
+
+</body>
+</html>

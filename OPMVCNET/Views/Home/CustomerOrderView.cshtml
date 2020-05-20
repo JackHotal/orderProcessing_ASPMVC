@@ -1,0 +1,48 @@
+﻿@model OPMVCNET.Models.Customer 
+@{
+    Layout = null;
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HelloForm</title>
+</head>
+<body>
+    @using (Html.BeginForm("GetProductView", "Home"))
+    { 
+    <p>
+
+      @Html.LabelFor(m => m.Id) :
+        @Html.TextBoxFor(m => m.Id) 
+       
+        @*<label asp-for="Id"> CID: </label>
+        <input asp-for="Id" value=@ViewBag.Customer.Id />*@
+    </p>
+
+    <p>
+        @Html.LabelFor(m => m.Name) :
+        @Html.TextBoxFor(m => m.Name)
+
+        @*
+        <label asp-for="Name"> Name: </label>
+        <input asp-for="Name" value=@ViewBag.Customer.Name />*@
+    </p>
+    <p>
+        <h3>  <label> Orders: </label> </h3>
+
+        <select name="orders" size="10">
+            @foreach (string s in ViewBag.Orders)
+            {
+              <option> @s</option>
+            }
+        </select>
+    </p>
+    <p>
+        <button type="submit"> Purchase </button>
+    </p>
+     }
+
+</body>
+</html>
